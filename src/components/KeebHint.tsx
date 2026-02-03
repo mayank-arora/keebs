@@ -1,3 +1,4 @@
+import React from "react";
 import type { KeebHintProps } from "../types";
 import { useKeebsVisible } from "../context/KeebsContext";
 import { parseShortcut } from "../utils/parseShortcut";
