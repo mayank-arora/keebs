@@ -175,7 +175,7 @@ export function KeebsProvider({
 
   const register = useCallback((shortcut: RegisteredShortcut) => {
     const existing = registryRef.current.get(shortcut.id);
-    if (existing && process.env.NODE_ENV === "development") {
+    if (existing) {
       console.warn(
         `[keebs] Shortcut "${shortcut.shortcut}" is already registered. The new registration will override the previous one.`,
       );
@@ -184,11 +184,9 @@ export function KeebsProvider({
     // Check for conflicts with same shortcut string but different IDs
     for (const [id, registered] of registryRef.current) {
       if (id !== shortcut.id && registered.shortcut === shortcut.shortcut) {
-        if (process.env.NODE_ENV === "development") {
-          console.warn(
-            `[keebs] Shortcut conflict: "${shortcut.shortcut}" is registered by multiple components. Last registration wins.`,
-          );
-        }
+        console.warn(
+          `[keebs] Shortcut conflict: "${shortcut.shortcut}" is registered by multiple components. Last registration wins.`,
+        );
       }
     }
 
