@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "exports": "./src/index.ts",
   "license": "MIT",
+  "nodeModulesDir": "auto",
   "unstable": ["sloppy-imports"],
   "compilerOptions": {
     "jsx": "react-jsx",
