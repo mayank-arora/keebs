@@ -6,6 +6,7 @@
   "nodeModulesDir": "auto",
   "unstable": ["sloppy-imports"],
   "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "deno.ns", "esnext"],
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
