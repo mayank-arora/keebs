@@ -24,7 +24,7 @@ export function KeebHint({
   className = "",
   style,
   variant = "text",
-}: KeebHintProps) {
+}: KeebHintProps): React.JSX.Element {
   // Use context visibility if not explicitly provided
   const contextVisible = useKeebsVisible();
   const isVisible = visibleProp ?? contextVisible;

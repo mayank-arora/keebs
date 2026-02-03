@@ -35,7 +35,7 @@ export function KeebsProvider({
   disabled: initialDisabled = false,
   shortcuts: defaultShortcuts = {},
   overrides: initialOverrides = {},
-}: KeebsProviderProps) {
+}: KeebsProviderProps): React.JSX.Element {
   // Auto-inject CSS styles on first mount
   injectStyles();
 
@@ -241,7 +241,14 @@ export function useKeebsVisible(): boolean {
 /**
  * Hook to control global disabled state and access shortcut editor functions
  */
-export function useKeebsControl() {
+export function useKeebsControl(): {
+  disabled: boolean;
+  setDisabled: (disabled: boolean) => void;
+  updateShortcut: (id: string, shortcut: string) => void;
+  resetShortcut: (id: string) => void;
+  resetAllShortcuts: () => void;
+  getRegisteredShortcuts: () => ShortcutMap;
+} {
   const {
     disabled,
     setDisabled,
