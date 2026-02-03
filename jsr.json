@@ -1,9 +1,0 @@
-{
-  "name": "@mayankarora/keebs",
-  "version": "0.1.0",
-  "exports": "./src/index.ts",
-  "license": "MIT",
-  "publish": {
-    "include": ["src", "README.md", "LICENSE"]
-  }
-}
